@@ -22,7 +22,7 @@
                     <?php } ?>
 
                     <?php if (count($checkPinjam) != 0) { ?>
-                        <div class="badge text-bg-success d-flex justify-content-between align-items-center"> <?= count($checkPinjam) ?> Buku Dipinjam <a href="<?= BASEURL ?>/user/cancelpinjam/<?= $bukuId ?>" class="btn btn-light btn-sm ms-2">Cancel</a></div>
+                        <div class="badge text-bg-success d-flex justify-content-between align-items-center p-2"> <?= count($checkPinjam) ?> Buku Dipinjam </div>
                     <?php } ?>
                 </div>
                 <a href="<?= BASEURL ?>/user/detailbuku/<?= $book['id'] ?>" class="link-offset-2 link-underline link-underline-opacity-0 text-dark">
@@ -62,11 +62,11 @@
                                 </div>
                                 <a href="<?= BASEURL ?>/user/savekoleksi/<?= $book['id'] ?>">
                                     <img src="<?= BASEURL ?>/img/save<?php
-                                                                    $checkSaved = $koleksi->getKoleksi($idUser, $bukuId);
-                                                                    if (count($checkSaved) != 0) {
-                                                                        echo "d";
-                                                                    }
-                                                                    ?>.svg" alt="" style="width: 18px;" class="">
+                                                                        $checkSaved = $koleksi->getKoleksi($idUser, $bukuId);
+                                                                        if (count($checkSaved) != 0) {
+                                                                            echo "d";
+                                                                        }
+                                                                        ?>.svg" alt="" style="width: 18px;" class="">
                                 </a>
                             </div>
                             <?php

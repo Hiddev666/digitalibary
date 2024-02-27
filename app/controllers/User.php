@@ -22,6 +22,7 @@ class User extends Controller
         }
 
         $penulis = $this->getModel("Buku_model")->getAllPenulis();
+        $populars = $this->getModel("Buku_model")->getPopulars();
         $penerbit = $this->getModel("Buku_model")->getAllPenerbit();
         $tahunterbit = $this->getModel("Buku_model")->getAllTahunTerbit();
         $kategori = $this->getModel("Kategori_model")->getAll();
@@ -31,6 +32,7 @@ class User extends Controller
 
         $this->render("user/index", [
             "peminjaman" => $peminjaman,
+            "populars" => $populars,
             "datapenulis" => $penulis,
             "datapenerbit" => $penerbit,
             "datatahunterbit" => $tahunterbit,

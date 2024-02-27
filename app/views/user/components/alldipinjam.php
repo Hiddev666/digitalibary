@@ -8,33 +8,33 @@
         </select>
     </form>
 </div>
-<script src="<?= BASEURL?>/js/admin.js"></script>
+<script src="<?= BASEURL ?>/js/admin.js"></script>
 
 <div class="container d-flex w-100 justify-content-center mb-5">
     <div class="row justify-content-center">
         <?php
-        foreach ($databuku as $book) :?>
-        
+        foreach ($databuku as $book) : ?>
+
             <div class="col mt-5">
-            <div class='d-flex position-absolute z-3 ms-2 mt-2 flex-column gap-1'>
-                <?php
-                session_start();
-                $idUser = $_SESSION['user-id'];
-                $bukuId = $book['bukuid'];
+                <div class='d-flex position-absolute z-3 ms-2 mt-2 flex-column gap-1'>
+                    <?php
+                    session_start();
+                    $idUser = $_SESSION['user-id'];
+                    $bukuId = $book['bukuid'];
 
-                $checkPinjam = $peminjaman->checkPinjam($idUser, $bukuId);
-                $checkPending = $peminjaman->checkPending($idUser, $bukuId);
-                
-                ?>
+                    $checkPinjam = $peminjaman->checkPinjam($idUser, $bukuId);
+                    $checkPending = $peminjaman->checkPending($idUser, $bukuId);
 
-<?php if (count($checkPending) != 0) { ?>
-            <div class="badge text-bg-warning d-flex justify-content-between align-items-center"> <?= count($checkPending) ?> Buku Dipending <a href="<?= BASEURL ?>/user/cancelpending/<?= $bukuId ?>" class="btn btn-light btn-sm ms-2">Cancel</a></div>
-        <?php } ?>
+                    ?>
 
-        <?php if (count($checkPinjam) != 0) { ?>
-            <div class="badge text-bg-success d-flex justify-content-between align-items-center"> <?= count($checkPinjam) ?> Buku Dipinjam <a href="<?= BASEURL ?>/user/cancelpinjam/<?= $bukuId ?>" class="btn btn-light btn-sm ms-2">Cancel</a></div>
-        <?php } ?>
-            </div>
+                    <?php if (count($checkPending) != 0) { ?>
+                        <div class="badge text-bg-warning d-flex justify-content-between align-items-center"> <?= count($checkPending) ?> Buku Dipending <a href="<?= BASEURL ?>/user/cancelpending/<?= $bukuId ?>" class="btn btn-light btn-sm ms-2">Cancel</a></div>
+                    <?php } ?>
+
+                    <?php if (count($checkPinjam) != 0) { ?>
+                        <div class="badge text-bg-success d-flex justify-content-between align-items-center p-2"> <?= count($checkPinjam) ?> Buku Dipinjam </div>
+                    <?php } ?>
+                </div>
                 <a href="<?= BASEURL ?>/user/detailbuku/<?= $book['bukuid'] ?>" class="link-offset-2 link-underline link-underline-opacity-0 text-dark">
                     <div class="card h-100" style="width: 16rem;">
                         <img src="<?= $book['image'] ?>" class="card-img-top object-fit-cover" alt="..." style="width: 100%; height: 300px;">
@@ -72,11 +72,11 @@
                                 </div>
                                 <a href="<?= BASEURL ?>/user/savekoleksi/<?= $book['id'] ?>">
                                     <img src="<?= BASEURL ?>/img/save<?php
-                                                                    $checkSaved = $koleksi->getKoleksi($idUser, $bukuId);
-                                                                    if (count($checkSaved) != 0) {
-                                                                        echo "d";
-                                                                    }
-                                                                    ?>.svg" alt="" style="width: 18px;" class="">
+                                                                        $checkSaved = $koleksi->getKoleksi($idUser, $bukuId);
+                                                                        if (count($checkSaved) != 0) {
+                                                                            echo "d";
+                                                                        }
+                                                                        ?>.svg" alt="" style="width: 18px;" class="">
                                 </a>
                             </div>
                             <div class="d-flex flex-column gap-1 mt-4 justify-content-end">

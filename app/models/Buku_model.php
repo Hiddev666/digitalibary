@@ -24,6 +24,14 @@ class Buku_model
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getPopulars()
+    {
+        $this->stmt = $this->dbh->prepare("SELECT buku.id, buku.image, buku.judul, buku.penulis, buku.penerbit, buku.stock, buku.tahun_terbit, kategoribuku.nama_kategori FROM buku inner join kategoribuku_relasi on buku.id = kategoribuku_relasi.id_buku inner join kategoribuku on kategoribuku.id = kategoribuku_relasi.id_kategori INNER JOIN ulasanbuku on buku.id = ulasanbuku.id_buku ORDER BY ulasanbuku.rating desc LIMIT 4;");
+        $this->stmt->execute();
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
     public function getLimit()
     {
         $this->stmt = $this->dbh->prepare("SELECT buku.id, buku.image, buku.judul, buku.penulis, buku.penerbit, buku.tahun_terbit, kategoribuku.nama_kategori FROM buku inner join kategoribuku_relasi on buku.id = kategoribuku_relasi.id_buku inner join kategoribuku on kategoribuku.id = kategoribuku_relasi.id_kategori ORDER BY buku.id desc LIMIT 4;");

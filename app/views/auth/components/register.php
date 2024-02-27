@@ -3,8 +3,10 @@
             <div class="container h-100" style="height: 100vh;">
                 <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
                     <div class="col-sm-6">
-                        <img src="<?= BASEURL ?>/img/digitaLibrary.svg" alt="" class="ms-3">
-                        <img src="<?= BASEURL ?>/img/login-ill.svg" alt="illustration" class="mt-3">
+                        <a href="<?= BASEURL ?>/main">
+                            <img src="<?= BASEURL ?>/img/digitaLibrary.svg" alt="" class="ms-3">
+                        </a>
+                        <img src="<?= BASEURL ?>/img/login-ill.svg" alt="illustration" class="mt-3" style="width: 80%;">
                     </div>
                     <div class="col-sm-6 d-flex justify-content-center align-items-center" style="height: 100vh;">
                         <div class="card-body">

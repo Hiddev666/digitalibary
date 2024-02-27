@@ -30,7 +30,7 @@
     </nav>
     <!-- Navbar -->
 
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
 
         <div id="carouselExampleAutoplaying" class="carousel slide rounded" data-bs-ride="carousel">
             <div class="carousel-inner">

@@ -15,7 +15,7 @@
         <?php } ?>
 
         <?php if (count($checkPinjam) != 0) { ?>
-            <div class="badge text-bg-success d-flex justify-content-between align-items-center"> <?= count($checkPinjam) ?> Buku Dipinjam <a href="<?= BASEURL ?>/user/cancelpinjam/<?= $bukuId ?>" class="btn btn-light btn-sm ms-2">Cancel</a></div>
+            <div class="badge text-bg-success d-flex justify-content-between align-items-center p-2"> <?= count($checkPinjam) ?> Buku Dipinjam </div>
         <?php } ?>
     </div>
     <img src="<?= $buku['image'] ?>" alt="" style="height: 70vh;" class="rounded border border-1">

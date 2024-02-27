@@ -4,7 +4,7 @@ class Main extends Controller
 {
 
     public function index() {
-        $buku = $this->getModel("Buku_model")->getLimit();
+        $buku = $this->getModel("Buku_model")->getPopulars();
         $bukumodel = $this->getModel("Buku_model");
         $peminjaman = $this->getModel("Peminjaman_model");
         $koleksi = $this->getModel("Koleksi_model");
